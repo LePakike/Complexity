@@ -7,7 +7,7 @@ namespace Complexity.AriaEntity
 
     public partial class AriaContext : DbContext
     {
-        private const string ConnectionString = "data source=<location>;initial catalog=variansystem;persist security info=True;user id=<username>;password=<password>;MultipleActiveResultSets=True;App=EntityFramework";
+        private const string ConnectionString = "data source=<>;initial catalog=<>;persist security info=True;user id=<>;password=<>;MultipleActiveResultSets=True;App=EntityFramework";
 
         public AriaContext() : base(ConnectionString)
         {
