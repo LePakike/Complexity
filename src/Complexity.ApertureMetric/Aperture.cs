@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Complexity.ApertureMetric
 {
@@ -7,6 +8,9 @@ namespace Complexity.ApertureMetric
     {
         public LeafPair[] LeafPairs { get; set; }
         public Jaw Jaw { get; set; }
+        public List<double> pos_left;
+        public List<double> pos_right;
+        public double GantryAngle { get; set; }
 
         // The first dimension of leafPositions corresponds to the bank,
         // and the second dimension corresponds to the leaf pair.
@@ -32,10 +36,29 @@ namespace Complexity.ApertureMetric
         //     new double[] { double.MinValue, double.MinValue,
         //                    double.MaxValue, double.MaxValue };
 
-        public Aperture(double[,] leafPositions, double[] leafWidths, double[] jaw)
+        public Aperture(double[,] leafPositions, double[] leafWidths, double[] jaw, double gantry_angle)
         {
             Jaw = CreateJaw(jaw);
             LeafPairs = CreateLeafPairs(leafPositions, leafWidths, Jaw);
+            GantryAngle = gantry_angle;
+            create_pos_left_right();
+        }
+
+        public void create_pos_left_right()
+        {
+            pos_left = new List<double>();
+            pos_right = new List<double>();
+            List<double[]> leaf_pair_positions = new List<double[]>();
+
+            foreach (LeafPair lp in LeafPairs)
+            {
+                if (!lp.IsOutsideJaw())
+                {
+                    pos_left.Add(lp.Left);
+                    pos_right.Add(lp.Right);
+                    leaf_pair_positions.Add(new double[] { lp.Left, lp.Right });
+                }
+            }
         }
 
         private LeafPair[] CreateLeafPairs

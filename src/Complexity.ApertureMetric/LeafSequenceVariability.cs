@@ -6,8 +6,10 @@ namespace Complexity.ApertureMetric
 {
     public class LeafSequenceVariability
     {
-        public double Calculate(Aperture aperture, double aav_norm, List<double> pos_left, List<double> pos_right)
+        public double Calculate(Aperture aperture, double aav_norm)
         {
+            List<double> pos_left = aperture.pos_left;
+            List<double> pos_right = aperture.pos_right;
             int N = pos_right.Count;
             double[] pos_max = new double[] { Math.Abs(pos_left.Max() - pos_left.Min()),
                 Math.Abs(pos_right.Max() - pos_right.Min()) };
