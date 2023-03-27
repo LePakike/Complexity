@@ -190,5 +190,10 @@ namespace Complexity
                 }
             }
         }
+
+        private void WeightTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

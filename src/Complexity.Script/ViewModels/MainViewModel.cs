@@ -8,6 +8,7 @@ namespace Complexity.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        public AreaPenaltyViewModel EdgePenaltyViewModel { get; }
         public MainViewModel(User user, Patient patient,
             PlanSetup activePlan, IEnumerable<PlanSetup> plans)
         {
@@ -16,7 +17,8 @@ namespace Complexity.ViewModels
             Plan = activePlan;
             Plans = plans;
 
-            EdgePenaltyViewModel = new EdgePenaltyViewModel(this, patient, activePlan, Plans);
+            //EdgePenaltyViewModel = new EdgePenaltyViewModel(this, patient, activePlan, Plans);
+            EdgePenaltyViewModel = new AreaPenaltyViewModel(this, patient, activePlan, Plans);
         }
 
         public User User { get; }
@@ -28,8 +30,6 @@ namespace Complexity.ViewModels
 
         public string HelpUri =>
             Path.Combine(AssemblyHelper.GetAssemblyDirectory(), "ComplexityScript.pdf");
-
-        public EdgePenaltyViewModel EdgePenaltyViewModel { get; }
 
         public void CalculateEdgePenalty()
         {
