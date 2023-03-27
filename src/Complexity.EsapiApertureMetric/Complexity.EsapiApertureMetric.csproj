@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="AperturesFromBeamCreator.cs" />
     <Compile Include="ComplexityMetric.cs" />
+    <Compile Include="AreaMetric.cs" />
     <Compile Include="EdgeMetric.cs" />
     <Compile Include="LeafWidthsNotFoundException.cs" />
     <Compile Include="MetersetsFromMetersetWeightsCreator.cs" />

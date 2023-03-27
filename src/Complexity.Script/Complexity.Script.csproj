@@ -101,6 +101,7 @@
     <Compile Include="PatientDataItem.cs" />
     <Compile Include="ViewModels\BoxPlotPerFieldPlotModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\AreaPenaltyViewModel.cs" />
     <Compile Include="ViewModels\EnumToBoolConverter.cs" />
     <Compile Include="ViewModels\HistogramDataSources.cs" />
     <Compile Include="ViewModels\HistogramModel.cs" />
