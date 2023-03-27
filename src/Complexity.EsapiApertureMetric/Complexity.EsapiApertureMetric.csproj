@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AperturesFromBeamCreator.cs" />
+    <Compile Include="ModulationComplexityScore.cs" />
+    <Compile Include="ModulationIndexTotal.cs" />
     <Compile Include="ComplexityMetric.cs" />
     <Compile Include="AreaMetric.cs" />
     <Compile Include="EdgeMetric.cs" />

@@ -28,7 +28,7 @@ namespace Complexity.EsapiApertureMetric
                 }
                 aav_norm += System.Math.Abs(pos_left.Max() - pos_right.Max());
             }
-            ApertureMetric.LeafSequenceVariability metric = new ApertureMetric.LeafSequenceVariability();
+            LeafSequenceVariability metric = new LeafSequenceVariability();
             return (from aperture in apertures
                     select metric.Calculate(aperture, aav_norm)).ToArray();
         }

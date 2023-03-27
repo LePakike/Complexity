@@ -41,7 +41,7 @@ namespace Complexity.EsapiApertureMetric
         }
 
         // Returns the unweighted metrics of a plan's non-setup beams
-        private double[] CalculateForPlanPerBeam(Patient patient, PlanSetup plan)
+        public double[] CalculateForPlanPerBeam(Patient patient, PlanSetup plan)
         {
             return (from beam in plan.Beams
                     where !beam.IsSetupField
@@ -54,7 +54,7 @@ namespace Complexity.EsapiApertureMetric
 
         // Returns the complexity metric of a beam, calculated as
         // the weighted sum of the individual metrics for each control point
-        public double CalculateForBeam(Patient patient, PlanSetup plan, Beam beam)
+        public virtual double CalculateForBeam(Patient patient, PlanSetup plan, Beam beam)
         {
             return WeightedSum(GetWeights(beam), GetMetrics(patient, plan, beam));
         }
