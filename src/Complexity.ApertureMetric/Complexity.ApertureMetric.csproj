@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Algebra.cs" />
     <Compile Include="Aperture.cs" />
+    <Compile Include="LeafSequenceVariability.cs" />
+    <Compile Include="ModulationIndexScore.cs" />
     <Compile Include="EdgeMetric.cs" />
     <Compile Include="Jaw.cs" />
     <Compile Include="LeafPair.cs" />

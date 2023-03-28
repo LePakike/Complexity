@@ -19,7 +19,7 @@ namespace Complexity.EsapiApertureMetric
             {
                 double[,] leafPositions = GetLeafPositions(controlPoint, beam);
                 double[] jaw = CreateJaw(controlPoint);
-                apertures.Add(new Aperture(leafPositions, leafWidths, jaw));
+                apertures.Add(new Aperture(leafPositions, leafWidths, jaw, controlPoint.GantryAngle));
             }
 
             return apertures;
