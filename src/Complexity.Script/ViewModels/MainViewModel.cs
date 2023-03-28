@@ -8,7 +8,7 @@ namespace Complexity.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public AreaPenaltyViewModel EdgePenaltyViewModel { get; }
+        public EdgePenaltyViewModel EdgePenaltyViewModel { get; }
         public MainViewModel(User user, Patient patient,
             PlanSetup activePlan, IEnumerable<PlanSetup> plans)
         {
@@ -18,7 +18,7 @@ namespace Complexity.ViewModels
             Plans = plans;
 
             //EdgePenaltyViewModel = new EdgePenaltyViewModel(this, patient, activePlan, Plans);
-            EdgePenaltyViewModel = new AreaPenaltyViewModel(this, patient, activePlan, Plans);
+            EdgePenaltyViewModel = new EdgePenaltyViewModel(this, patient, activePlan, Plans);
         }
 
         public User User { get; }

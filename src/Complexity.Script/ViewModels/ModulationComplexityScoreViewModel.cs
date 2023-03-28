@@ -13,11 +13,11 @@ using VMS.TPS.Common.Model.Types;
 
 namespace Complexity.ViewModels
 {
-    public class AreaPenaltyViewModel : ViewModelBase
+    public class ModulationComplexityScoreViewModel : ViewModelBase
     {
         public MainViewModel MainViewModel { get; set; }
 
-        private AreaMetric EdgePenaltyCalculator { get; set; }
+        private ModulationComplexityScoreMetric EdgePenaltyCalculator { get; set; }
 
         private string VmatDataPath
         {
@@ -130,7 +130,7 @@ namespace Complexity.ViewModels
 
         public HistogramViewModel HistogramViewModel { get; set; }
 
-        public AreaPenaltyViewModel(MainViewModel mainViewModel,
+        public ModulationComplexityScoreViewModel(MainViewModel mainViewModel,
             Patient patient, PlanSetup activePlan, IEnumerable<PlanSetup> plans)
         {
             MainViewModel = mainViewModel;
@@ -173,7 +173,7 @@ namespace Complexity.ViewModels
                  let fields = Fields.Where(f => f.Plan.Plan.Course == course)
                  select new CourseViewModel(course, fields));
 
-            EdgePenaltyCalculator = new AreaMetric();
+            EdgePenaltyCalculator = new ModulationComplexityScoreMetric();
 
             WeightType = WeightTypes[0];
 
@@ -397,11 +397,11 @@ namespace Complexity.ViewModels
         {
             if (WeightType == PenaltyWeightTypes.Weighted)
             {
-                return "Area metric";
+                return "Complexity Score metric";
             }
             else if (WeightType == PenaltyWeightTypes.Unweighted)
             {
-                return "Unweighted Area metric";
+                return "Unweighted Complexity Score metric";
             }
             else if (WeightType == PenaltyWeightTypes.WeightOnly)
             {

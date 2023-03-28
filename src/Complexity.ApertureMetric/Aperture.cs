@@ -43,6 +43,12 @@ namespace Complexity.ApertureMetric
             GantryAngle = gantry_angle;
             create_pos_left_right();
         }
+        public Aperture(double[,] leafPositions, double[] leafWidths, double[] jaw)
+        {
+            Jaw = CreateJaw(jaw);
+            LeafPairs = CreateLeafPairs(leafPositions, leafWidths, Jaw);
+            create_pos_left_right();
+        }
 
         public void create_pos_left_right()
         {
